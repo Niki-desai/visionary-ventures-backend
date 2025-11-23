@@ -54,6 +54,21 @@ public class User {
     @Field("last_login")
     private LocalDateTime lastLogin;
     
+    @Field("otp")
+    private String otp;
+    
+    @Field("otp_expiry")
+    private LocalDateTime otpExpiry;
+    
+    @Field("oauth_provider")
+    private String oauthProvider; // "google", "github", "linkedin", etc.
+    
+    @Field("oauth_id")
+    private String oauthId;
+    
+    @Field("registration_otp_verified")
+    private Boolean registrationOtpVerified;
+    
     // Getters and Setters
     public String getId() {
         return id;
@@ -165,6 +180,46 @@ public class User {
     
     public void setLastLogin(LocalDateTime lastLogin) {
         this.lastLogin = lastLogin;
+    }
+    
+    public String getOtp() {
+        return otp;
+    }
+    
+    public void setOtp(String otp) {
+        this.otp = otp;
+    }
+    
+    public LocalDateTime getOtpExpiry() {
+        return otpExpiry;
+    }
+    
+    public void setOtpExpiry(LocalDateTime otpExpiry) {
+        this.otpExpiry = otpExpiry;
+    }
+    
+    public String getOauthProvider() {
+        return oauthProvider;
+    }
+    
+    public void setOauthProvider(String oauthProvider) {
+        this.oauthProvider = oauthProvider;
+    }
+    
+    public String getOauthId() {
+        return oauthId;
+    }
+    
+    public void setOauthId(String oauthId) {
+        this.oauthId = oauthId;
+    }
+    
+    public Boolean getRegistrationOtpVerified() {
+        return registrationOtpVerified;
+    }
+    
+    public void setRegistrationOtpVerified(Boolean registrationOtpVerified) {
+        this.registrationOtpVerified = registrationOtpVerified;
     }
     
     // Nested classes
