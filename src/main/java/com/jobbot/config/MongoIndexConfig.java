@@ -20,12 +20,25 @@ public class MongoIndexConfig {
 
     @PostConstruct
     public void createIndexes() {
-        createUserIndexes();
-        createJobIndexes();
-        createApplicationIndexes();
-        createResumeIndexes();
-        createJobSearchIndexes();
-        createAIConversationIndexes();
+        System.out.println("📊 Creating MongoDB indexes...");
+        try {
+            createUserIndexes();
+            System.out.println("✅ User indexes created");
+            createJobIndexes();
+            System.out.println("✅ Job indexes created");
+            createApplicationIndexes();
+            System.out.println("✅ Application indexes created");
+            createResumeIndexes();
+            System.out.println("✅ Resume indexes created");
+            createJobSearchIndexes();
+            System.out.println("✅ JobSearch indexes created");
+            createAIConversationIndexes();
+            System.out.println("✅ AIConversation indexes created");
+            System.out.println("🎉 All MongoDB indexes created successfully!");
+        } catch (Exception e) {
+            System.err.println("❌ Error creating indexes: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private void createUserIndexes() {

@@ -33,12 +33,25 @@ public class DataSeederService implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        // Uncomment the line below to seed data on application startup
-        // seedData();
+        // Seed data on application startup
+        System.out.println("🚀 Starting data seeding...");
+        try {
+            seedData();
+        } catch (Exception e) {
+            System.err.println("❌ Error seeding data: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public void seedData() {
         System.out.println("🌱 Seeding MongoDB database...");
+        
+        // Check if data already exists
+        long userCount = userRepository.count();
+        if (userCount > 0) {
+            System.out.println("ℹ️  Data already exists (" + userCount + " users). Skipping seed.");
+            return;
+        }
 
         // Clear existing data (optional - be careful in production!)
         // clearAllData();
