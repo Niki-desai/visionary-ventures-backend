@@ -60,3 +60,6 @@ Thumbs.db
 application-local.yml
 application-prod.yml
 
+# Spring Boot DevTools
+.spring-boot-devtools.properties
+

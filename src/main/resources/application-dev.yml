@@ -1,0 +1,18 @@
+# Development Profile Configuration
+# Use with: --spring.profiles.active=dev
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java,src/main/resources
+      exclude: static/**,public/**,templates/**
+    livereload:
+      enabled: true
+    add-properties: true
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    com.jobbot: DEBUG
+
