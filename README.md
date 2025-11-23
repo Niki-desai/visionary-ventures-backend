@@ -230,3 +230,6 @@ All configuration is managed through `application.yml`. Key configurations:
 ## Contact
 
 [Add contact information here]
+
+
+for docs -> $env:JAVA_HOME = "C:\Program Files\Java\jdk-25"; $env:PATH = "C:\Program Files\Java\jdk-25\bin;$env:PATH"; .\mvnw.cmd spring-boot:run
