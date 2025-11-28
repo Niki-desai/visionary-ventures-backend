@@ -4,11 +4,23 @@
 
 A Spring Boot-based backend service that leverages AI (OpenAI/Local Models) to help users find jobs and automatically apply to them using an agentic workflow.
 
+---
+
+## 📚 For Node.js/Express Developers
+
+**New to Spring Boot?** Start here: **[START_HERE.md](START_HERE.md)** 🚀
+
+Complete learning guides for Express developers to quickly learn Spring Boot!
+
+---
+
 ## System Architecture
 
-- **Backend**: Spring Boot (Java 17)
+- **Backend**: Spring Boot (Java 17+)
 - **Database**: MongoDB
 - **AI Layer**: LLM-powered Agentic Workflow (OpenAI / Local Model)
+- **Authentication**: JWT + OAuth2
+- **API Docs**: Swagger/OpenAPI (like FastAPI)
 
 ## Project Structure
 
