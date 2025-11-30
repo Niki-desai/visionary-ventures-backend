@@ -1,0 +1,119 @@
+fastapi-backend-mastery/
+│
+├── 00_introduction/
+│   ├── why_fastapi_over_others.md
+│   ├── async_vs_sync_backends.md
+│   ├── when_to_use_fastapi_vs_spring_vs_express.md
+│   └── architecture_philosophy.md               # Modularity, separation of concerns, testability
+│
+├── 01_project_structure/
+│   ├── recommended_layout.md                    # app/, core/, api/, models/, etc.
+│   ├── dependency_injection_best_practices.md
+│   ├── config_management_with_pydantic.md
+│   └── monorepo_vs_microservices_considerations.md
+│
+├── 02_data_layer_fundamentals/
+│   ├── data_modeling_principles.md              # Normalization vs denormalization, idempotency keys
+│   ├── choosing_database_type.md                # SQL vs NoSQL vs Vector vs Graph — decision matrix
+│   ├── connection_pooling_and_lifecycles.md     # Engine, session, async session scope
+│   ├── transactions_in_async_world.md           # When to use, how to test, pitfalls
+│   └── data_validation_vs_business_validation.md
+│
+├── 03_relational_databases_sql/
+│   ├── async_sqlalchemy_deep_dive.md
+│   ├── sqlalchemy_orm_vs_core.md                # When to use raw SQL
+│   ├── session_management_patterns.md           # Request-scoped vs long-lived sessions
+│   ├── crud_with_repository_pattern.md
+│   ├── advanced_querying.md                     # Joins, subqueries, CTEs in SQLAlchemy
+│   ├── pagination_strategies.md                 # Offset vs cursor, total count tradeoffs
+│   ├── soft_delete_patterns.md
+│   ├── composite_primary_keys.md
+│   └── alembic_migrations_best_practices.md
+│
+├── 04_postgresql_specific/
+│   ├── jsonb_and_full_text_search.md
+│   ├── array_and_enum_types.md
+│   ├── pgvector_for_embeddings.md               # Critical for AI apps
+│   ├── creating_vector_index.md                 # HNSW vs IVFFlat, dimension tuning
+│   ├── hybrid_search_sql_plus_vector.md
+│   └── connection_uri_and_ssl_config.md
+│
+├── 05_nosql_mongodb/
+│   ├── when_to_choose_mongodb.md
+│   ├── motor_async_driver_setup.md
+│   ├── data_modeling_for_document_dbs.md        # Embed vs reference
+│   ├── indexing_in_mongodb.md                   # Compound, TTL, text, wildcard
+│   ├── mongodb_atlas_vector_search.md           # Atlas Search index, k-NN queries
+│   ├── aggregation_pipeline_in_fastapi.md
+│   ├── change_streams_for_events.md
+│   └── odm_comparison_beanie_vs_umongo.md
+│
+├── 06_caching_layer/
+│   ├── redis_integration.md                     # aioredis, connection pooling
+│   ├── cache_strategies.md                      # Cache-aside, write-through, TTL
+│   ├── caching_query_results.md
+│   ├── cache_invalidation_patterns.md
+│   └── using_redis_streams_for_messaging.md
+│
+├── 07_background_processing/
+│   ├── background_tasks_vs_celery_vs_rq.md
+│   ├── celery_architecture_deep_dive.md
+│   ├── task_idempotency_and_deduplication.md
+│   ├── retry_with_exponential_backoff.md
+│   ├── monitoring_with_flower_and_prometheus.md
+│   ├── sending_tasks_from_fastapi.md
+│   └── handling_task_results_and_timeouts.md
+│
+├── 08_ai_and_llm_integration/
+│   ├── structured_output_with_pydantic.md
+│   ├── prompt_versioning_and_ab_testing.md
+│   ├── ai_call_retry_and_circuit_breaking.md
+│   ├── embedding_generation_and_storage.md
+│   ├── ai_cost_tracking.md
+│   └── ai_logging_with_traceability.md
+│
+├── 09_authentication_and_security/
+│   ├── jwt_implementation.md
+│   ├── password_hashing_best_practices.md
+│   ├── role_based_access_control.md
+│   ├── securing_database_connections.md
+│   ├── encrypting_pii_at_rest.md                # FLE in MongoDB, pgcrypto in PostgreSQL
+│   └── gdpr_compliance_design.md
+│
+├── 10_testing/
+│   ├── unit_testing_services.md
+│   ├── integration_testing_with_test_db.md
+│   ├── mocking_external_apis_and_ai.md
+│   ├── testing_async_repositories.md
+│   ├── pytest_fixtures_for_db.md
+│   └── contract_testing_for_apis.md
+│
+├── 11_observability/
+│   ├── structured_logging_with_context.md
+│   ├── database_query_logging.md                # Log slow queries, bind params
+│   ├── metrics_for_data_layer.md                # pool usage, query latency, error rates
+│   ├── distributed_tracing_with_opentelemetry.md
+│   └── alerting_on_data_pipeline_failures.md
+│
+├── 12_deployment_and_performance/
+│   ├── dockerizing_fastapi_with_gunicorn.md
+│   ├── tuning_database_connection_pool.md       # pool_size, max_overflow, timeout
+│   ├── read_replicas_for_scaling.md
+│   ├── health_checks_for_db_and_cache.md
+│   └── load_testing_data_intensive_endpoints.md
+│
+├── 13_system_design_patterns/
+│   ├── workflow_state_machines.md
+│   ├── event_sourcing_vs_crud.md
+│   ├── outbox_pattern_for_transactional_events.md
+│   ├── saga_pattern_for_distributed_tx.md
+│   └── cqrs_for_read_heavy_systems.md
+│
+├── 14_interview_mastery/
+│   ├── how_fastapi_handles_concurrency.md
+│   ├── explain_your_data_model_for_an_ai_job_platform.md
+│   ├── design_a_resume_parsing_pipeline.md
+│   ├── how_would_you_debug_a_slow_vector_search.md
+│   └── tradeoffs_sql_vs_mongodb_for_ai_apps.md
+│
+└── README.md                                     # Master index, learning path, contribution guide

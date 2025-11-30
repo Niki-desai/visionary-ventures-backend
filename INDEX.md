@@ -15,6 +15,30 @@ Hey! You're an Express developer learning Spring Boot. Here's everything you nee
 
 ## 📖 Learning Guides (Read in Order)
 
+### 0️⃣ [SPRING_BOOT_MASTERY_GUIDE.md](SPRING_BOOT_MASTERY_GUIDE.md) ⭐⭐⭐⭐⭐
+**MASTERY GUIDE WITH VISUALIZATIONS!** Complete learning path with diagrams.
+- 14 comprehensive sections (Introduction to Interview Mastery)
+- Visual diagrams for every concept
+- Database selection guides (SQL, NoSQL, Vector, Graph)
+- Data modeling principles with examples
+- Caching strategies visualization
+- Background processing comparison
+- RAG pipeline flow diagrams
+- JWT authentication flow
+- Saga pattern visualization
+- Concurrency model diagrams
+- And much more with visualizations!
+
+### 0️⃣ [SPRING_BOOT_COMPLETE_GUIDE.md](SPRING_BOOT_COMPLETE_GUIDE.md) ⭐⭐⭐⭐⭐
+**COMPLETE REFERENCE!** All Spring Boot topics covered.
+- Introduction (Spring vs Spring Boot, creating projects)
+- IoC & Dependency Injection (BeanFactory, ApplicationContext, Bean lifecycle, scopes)
+- REST API (all annotations, JSON, validation, exception handling)
+- Advanced Features (Scheduling, Email, File upload, Caching, Transactions, DTO Mapping)
+- Background/Async tasks, Garbage Collection
+- Microservices with Spring Boot
+- Spring Boot with Kafka (Producer, Consumer, JSON, Topics, ElasticSearch, Grafana)
+
 ### 1️⃣ [SPRING_BOOT_FOR_NODEJS_DEVS.md](SPRING_BOOT_FOR_NODEJS_DEVS.md) ⭐⭐⭐
 **Most Important!** Complete Express ↔ Spring Boot comparison.
 - Project setup comparison

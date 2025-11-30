@@ -34,6 +34,10 @@ public class MongoIndexConfig {
             System.out.println("✅ JobSearch indexes created");
             createAIConversationIndexes();
             System.out.println("✅ AIConversation indexes created");
+            createChatIndexes();
+            System.out.println("✅ Chat indexes created");
+            createChatMessageIndexes();
+            System.out.println("✅ ChatMessage indexes created");
             System.out.println("🎉 All MongoDB indexes created successfully!");
         } catch (Exception e) {
             System.err.println("❌ Error creating indexes: " + e.getMessage());
@@ -110,6 +114,48 @@ public class MongoIndexConfig {
                 .on("conversationType", org.springframework.data.domain.Sort.Direction.ASC));
         indexOps.ensureIndex(new Index().on("userId", org.springframework.data.domain.Sort.Direction.ASC)
                 .on("isActive", org.springframework.data.domain.Sort.Direction.ASC));
+    }
+    
+    private void createChatIndexes() {
+        IndexOperations indexOps = mongoTemplate.indexOps("chats");
+        
+        // Single field indexes
+        indexOps.ensureIndex(new Index().on("user_id", org.springframework.data.domain.Sort.Direction.ASC));
+        indexOps.ensureIndex(new Index().on("is_active", org.springframework.data.domain.Sort.Direction.ASC));
+        indexOps.ensureIndex(new Index().on("is_pinned", org.springframework.data.domain.Sort.Direction.ASC));
+        indexOps.ensureIndex(new Index().on("last_message_at", org.springframework.data.domain.Sort.Direction.DESC));
+        indexOps.ensureIndex(new Index().on("chat_type", org.springframework.data.domain.Sort.Direction.ASC));
+        
+        // Compound indexes
+        indexOps.ensureIndex(new Index().on("user_id", org.springframework.data.domain.Sort.Direction.ASC)
+                .on("is_active", org.springframework.data.domain.Sort.Direction.ASC));
+        indexOps.ensureIndex(new Index().on("user_id", org.springframework.data.domain.Sort.Direction.ASC)
+                .on("is_pinned", org.springframework.data.domain.Sort.Direction.ASC));
+        indexOps.ensureIndex(new Index().on("user_id", org.springframework.data.domain.Sort.Direction.ASC)
+                .on("last_message_at", org.springframework.data.domain.Sort.Direction.DESC));
+        
+        // Text index for title search
+        TextIndexDefinition textIndex = new TextIndexDefinitionBuilder()
+                .onField("title")
+                .build();
+        indexOps.ensureIndex(textIndex);
+    }
+    
+    private void createChatMessageIndexes() {
+        IndexOperations indexOps = mongoTemplate.indexOps("chat_messages");
+        
+        // Single field indexes
+        indexOps.ensureIndex(new Index().on("chat_id", org.springframework.data.domain.Sort.Direction.ASC));
+        indexOps.ensureIndex(new Index().on("user_id", org.springframework.data.domain.Sort.Direction.ASC));
+        indexOps.ensureIndex(new Index().on("role", org.springframework.data.domain.Sort.Direction.ASC));
+        indexOps.ensureIndex(new Index().on("created_at", org.springframework.data.domain.Sort.Direction.DESC));
+        indexOps.ensureIndex(new Index().on("parent_message_id", org.springframework.data.domain.Sort.Direction.ASC));
+        
+        // Compound indexes
+        indexOps.ensureIndex(new Index().on("chat_id", org.springframework.data.domain.Sort.Direction.ASC)
+                .on("created_at", org.springframework.data.domain.Sort.Direction.DESC));
+        indexOps.ensureIndex(new Index().on("chat_id", org.springframework.data.domain.Sort.Direction.ASC)
+                .on("role", org.springframework.data.domain.Sort.Direction.ASC));
     }
 }
 

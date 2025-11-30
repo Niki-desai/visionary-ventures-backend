@@ -8,8 +8,26 @@ Welcome! As a **Node.js/Express developer**, start here to learn Spring Boot qui
 
 ## 🎯 Learning Path (Read in Order):
 
+### 0. **SPRING_BOOT_MASTERY_GUIDE.md** ⭐⭐⭐⭐⭐
+**MASTERY GUIDE WITH VISUALIZATIONS!** Complete learning path.
+- 14 comprehensive sections with visual diagrams
+- Database selection matrix
+- Data modeling principles
+- Caching strategies
+- RAG pipeline flows
+- System design patterns
+- Interview preparation
+- Everything visualized!
+
+### 0. **SPRING_BOOT_COMPLETE_GUIDE.md** ⭐⭐⭐⭐⭐
+**COMPLETE REFERENCE!** All Spring Boot topics in one place.
+- Introduction, IoC, DI, REST API
+- Advanced Features (Scheduling, Email, Files, Caching, Transactions)
+- Background/Async tasks, Microservices, Kafka
+- Everything with code examples!
+
 ### 1. **SPRING_BOOT_FOR_NODEJS_DEVS.md** ⭐
-**Start here!** Complete comparison between Express and Spring Boot.
+**Start here if coming from Express!** Complete comparison between Express and Spring Boot.
 - Project setup comparison
 - Routing comparison
 - Database/ORM comparison
@@ -142,10 +160,11 @@ public class SecurityConfig {
 ## 🗂️ File Categories
 
 ### Must Read (Core Concepts):
-1. ⭐ SPRING_BOOT_FOR_NODEJS_DEVS.md
-2. ⭐ SPRING_BOOT_ANNOTATIONS.md
-3. ⭐ YOUR_PROJECT_EXPLAINED.md
-4. ⭐ ORM_EXPLAINED.md
+1. ⭐⭐⭐⭐⭐ SPRING_BOOT_COMPLETE_GUIDE.md (All topics!)
+2. ⭐ SPRING_BOOT_FOR_NODEJS_DEVS.md (Express comparison)
+3. ⭐ SPRING_BOOT_ANNOTATIONS.md
+4. ⭐ YOUR_PROJECT_EXPLAINED.md
+5. ⭐ ORM_EXPLAINED.md
 
 ### Reference (When Needed):
 - AUTH_FLOW.md

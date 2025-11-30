@@ -7,6 +7,16 @@
 
 ## Collections Overview
 
+**Total Collections: 8**
+1. users
+2. jobs
+3. applications
+4. resumes
+5. job_searches
+6. ai_conversations
+7. chats (NEW)
+8. chat_messages (NEW)
+
 ### 1. **users** Collection
 Stores user accounts and profiles.
 
@@ -210,6 +220,65 @@ Stores AI agent conversations and interactions.
 
 ---
 
+### 7. **chats** Collection
+Stores chat sessions for users (multiple chats per user).
+
+**Indexes:**
+- `user_id`
+- `user_id + is_active`
+- `user_id + is_pinned`
+- `user_id + last_message_at` (descending)
+- `title` (text search)
+
+**Key Fields:**
+- `id`: ObjectId (Primary Key)
+- `userId`: String (indexed, references users)
+- `title`: String (user-friendly chat title)
+- `chatType`: String - "general", "job_search", "resume_review", "cover_letter", "interview_prep"
+- `isActive`: Boolean
+- `isPinned`: Boolean (user can pin important chats)
+- `lastMessageAt`: DateTime (for sorting by recent activity)
+- `messageCount`: Integer (total messages in chat)
+- `metadata`: Map<String, Object> (additional context like jobId, applicationId)
+- `createdAt`, `updatedAt`: DateTime
+
+**Relationships:**
+- Many-to-One: Chat → User
+- One-to-Many: Chat → ChatMessage
+
+---
+
+### 8. **chat_messages** Collection
+Stores individual messages within chat sessions.
+
+**Indexes:**
+- `chat_id`
+- `user_id`
+- `chat_id + created_at` (descending)
+- `parent_message_id` (for threaded conversations)
+
+**Key Fields:**
+- `id`: ObjectId (Primary Key)
+- `chatId`: String (indexed, references chats)
+- `userId`: String (indexed, for quick user queries)
+- `role`: String - "user", "assistant", "system"
+- `content`: String (message text)
+- `messageType`: String - "text", "image", "file", "code", "markdown"
+- `tokensUsed`: Integer (for AI responses)
+- `modelUsed`: String (AI model name, e.g., "gpt-4", "claude-3")
+- `isEdited`: Boolean
+- `editedAt`: DateTime
+- `parentMessageId`: String (for threaded conversations)
+- `metadata`: Map<String, Object> (attachments, formatting, etc.)
+- `createdAt`: DateTime
+
+**Relationships:**
+- Many-to-One: ChatMessage → Chat
+- Many-to-One: ChatMessage → User
+- Optional: ChatMessage → ChatMessage (parent message for threading)
+
+---
+
 ## Indexes Summary
 
 ### Recommended Indexes (to be created):
@@ -242,6 +311,19 @@ db.job_searches.createIndex({ "userId": 1, "isActive": 1 })
 // ai_conversations collection
 db.ai_conversations.createIndex({ "userId": 1, "conversationType": 1 })
 db.ai_conversations.createIndex({ "userId": 1, "isActive": 1 })
+
+// chats collection
+db.chats.createIndex({ "user_id": 1 })
+db.chats.createIndex({ "user_id": 1, "is_active": 1 })
+db.chats.createIndex({ "user_id": 1, "is_pinned": 1 })
+db.chats.createIndex({ "user_id": 1, "last_message_at": -1 })
+db.chats.createIndex({ "title": "text" })
+
+// chat_messages collection
+db.chat_messages.createIndex({ "chat_id": 1 })
+db.chat_messages.createIndex({ "user_id": 1 })
+db.chat_messages.createIndex({ "chat_id": 1, "created_at": -1 })
+db.chat_messages.createIndex({ "parent_message_id": 1 })
 ```
 
 ---

@@ -105,8 +105,7 @@ public ApiResponse login(AuthRequest request) {
     // Generate token
     String token = jwtService.generateToken(user.getId(), user.getEmail());
     AuthResponse authResponse = new AuthResponse(token, user.getId(), 
-            user.getEmail(), user.getFirstName(), user.getLastName());
-    
+            user.getEmail(), user.getFirstName(), user.getLastName());    
     return ApiResponse.success("Login successful", authResponse);
 }
 ```
