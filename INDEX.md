@@ -100,30 +100,27 @@ Your actual codebase explained!
 - Testing APIs in browser
 
 ### Database Schema:
-**[MONGODB_SCHEMA.md](MONGODB_SCHEMA.md)**
-- 6 Collections documented
+**[MONGODB_COMPLETE.md](MONGODB_COMPLETE.md)** ⭐
+**Complete MongoDB Guide** - Setup, Schema & Models merged!
+- MongoDB setup (Local & Atlas)
+- Complete schema documentation (8 collections)
+- Models summary
 - Relationships diagram
-- Sample documents
 - Indexes list
-- Spring Boot model classes
-
-**[SCHEMA_SUMMARY.md](SCHEMA_SUMMARY.md)**
-- Quick schema overview
-- Models list
-- Repositories list
+- Troubleshooting
 
 ---
 
 ## 🛠️ Setup & Configuration
 
 ### Running the Application:
-**[RUN_COMMAND.md](RUN_COMMAND.md)**
-- Correct command to run
-- Step-by-step guide
-
-**[QUICK_START.md](QUICK_START.md)**
-- Multiple ways to run
+**[DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)** ⭐
+**Complete Development Guide** - Running, Hot Reload & Quick Start merged!
+- Quick start (4 options)
+- Running commands
+- Hot reload setup (IDE configuration)
 - Troubleshooting
+- Performance tips
 
 **[run.bat](run.bat)**
 - Batch file to run easily
@@ -140,10 +137,8 @@ Your actual codebase explained!
 - Seeding options
 
 ### Development Tools:
-**[HOT_RELOAD.md](HOT_RELOAD.md)**
-- Auto-reload setup (like nodemon)
-- IDE configuration
-- No restart needed!
+**[DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)** ⭐
+**See above** - Hot reload included in Development Guide
 
 **[MAVEN_EXPLAINED.md](MAVEN_EXPLAINED.md)**
 - What is Maven (like npm)
@@ -184,14 +179,14 @@ Your actual codebase explained!
 → Read: [AUTH_FLOW.md](AUTH_FLOW.md)
 
 ### "I want to see the database structure"
-→ Read: [MONGODB_SCHEMA.md](MONGODB_SCHEMA.md)
+→ Read: [MONGODB_COMPLETE.md](MONGODB_COMPLETE.md)
 
 ### "I want to run the application"
-→ Read: [RUN_COMMAND.md](RUN_COMMAND.md)
+→ Read: [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)
 → Or just run: `.\run.bat`
 
 ### "I want hot reload (like nodemon)"
-→ Read: [HOT_RELOAD.md](HOT_RELOAD.md)
+→ Read: [DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md) (Hot Reload section)
 
 ### "I want to understand Maven"
 → Read: [MAVEN_EXPLAINED.md](MAVEN_EXPLAINED.md)

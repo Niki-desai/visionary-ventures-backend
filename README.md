@@ -14,6 +14,15 @@ Complete learning guides for Express developers to quickly learn Spring Boot!
 
 ---
 
+## 📖 Quick Links
+
+- **[MONGODB_COMPLETE.md](MONGODB_COMPLETE.md)** - MongoDB setup & schema (merged guide)
+- **[DEVELOPMENT_GUIDE.md](DEVELOPMENT_GUIDE.md)** - Running app & hot reload (merged guide)
+- **[AUTH_FLOW.md](AUTH_FLOW.md)** - Complete authentication flow
+- **[ORM_EXPLAINED.md](ORM_EXPLAINED.md)** - Spring Data MongoDB explained
+
+---
+
 ## System Architecture
 
 - **Backend**: Spring Boot (Java 17+)

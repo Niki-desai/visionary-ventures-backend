@@ -76,16 +76,19 @@ Your actual code explained!
   - FastAPI-like features
 
 ### Database:
-- **MONGODB_SCHEMA.md** - Complete database schema
-  - All collections
-  - Relationships
-  - Indexes
+- **MONGODB_COMPLETE.md** ⭐ - Complete MongoDB guide (Setup + Schema merged!)
+  - MongoDB setup (Local & Atlas)
+  - All 8 collections documented
+  - Relationships, indexes
+  - Troubleshooting
 - **SEED_DATA.md** - How to populate database
-- **MONGODB_SETUP.md** - MongoDB installation guide
 
 ### Development:
-- **HOT_RELOAD.md** - Auto-reload setup (like nodemon)
-- **RUN_COMMAND.md** - How to run the app
+- **DEVELOPMENT_GUIDE.md** ⭐ - Complete development guide (merged!)
+  - Quick start (4 options)
+  - Running commands
+  - Hot reload setup
+  - Troubleshooting
 - **MAVEN_EXPLAINED.md** - What is Maven (like npm)
 
 ---
