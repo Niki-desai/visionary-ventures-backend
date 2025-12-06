@@ -7,6 +7,12 @@ spring:
     mongodb:
       uri: ${MONGODB_URI:mongodb://localhost:27017/jobbot}
       database: ${MONGODB_DATABASE:jobbot}
+
+rag:
+  groq:
+    api-key: ${GROQ_API_KEY:your-groq-key-here}
+  voyage:
+    api-key: ${VOYAGE_API_KEY:your-voyage-key-here}
       auto-index-creation: true
   
   # Email Configuration
